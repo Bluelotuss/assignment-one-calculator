@@ -6,16 +6,7 @@ namespace assignment_one_calculator
     {
         static void Main(string[] args)
         {
-            int num1 = 0;
-            int num2 = 0;
-
             Console.WriteLine("Welcome to the console calculator");
-
-            Console.WriteLine("Type a number, and then press Enter");
-            num1 = int.Parse(Console.ReadLine() ?? "");
-
-            Console.WriteLine("Type another number, and then press Enter");
-            num2 = int.Parse(Console.ReadLine() ?? "");
 
                 var keepAlive = true;
                 while(keepAlive)
@@ -29,16 +20,16 @@ namespace assignment_one_calculator
                     switch (calculationChoice)
                     {
                         case "d":
-                            runDivision(num1, num2);
+                            RunDivision(PickNumber(), PickNumber());
                             break;
                         case "m":
-                            runMultiplication(num1, num2);
+                            RunMultiplication(PickNumber(), PickNumber());
                             break;
                         case "a":
-                            runAddition(num1, num2);
+                            RunAddition(PickNumber(), PickNumber());
                             break;
                         case "s":
-                            runSubtraction(num1, num2);
+                            RunSubtraction(PickNumber(), PickNumber());
                             break;
                         case "e":
                             keepAlive = false;
@@ -53,12 +44,19 @@ namespace assignment_one_calculator
                     }
                     catch
                     {
-                        Console.WriteLine("That is not a valid assignment number!");
+                        Console.WriteLine("That is not a valid letter!");
                     }
                 }
         }
-       
-        static void runDivision(int num1, int num2)
+
+        static int PickNumber()
+        {
+            int num = 0;
+            Console.WriteLine("Type a number, and then press Enter");
+            return num = int.Parse(Console.ReadLine() ?? "");
+        }
+
+        static void RunDivision(int num1, int num2)
         {   
             while(num1 == 0 || num2 == 0)
             {
@@ -73,17 +71,17 @@ namespace assignment_one_calculator
             Console.WriteLine($"The result: {num1} / {num2} = " + (num1 / num2));
         }
 
-        static void runMultiplication(int num1, int num2)
+        static void RunMultiplication(int num1, int num2)
         {
             Console.WriteLine($"The result: {num1} * {num2} = " + (num1 * num2));
         }
 
-        static void runAddition(int num1, int num2)
+        static void RunAddition(int num1, int num2)
         {
             Console.WriteLine($"The result: {num1} + {num2} = " + (num1 + num2));
         }
 
-        static void runSubtraction(int num1, int num2)
+        static void RunSubtraction(int num1, int num2)
         {
             Console.WriteLine($"The result: {num1} - {num2} = " + (num1 - num2));
         }
