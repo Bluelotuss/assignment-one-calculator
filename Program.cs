@@ -56,7 +56,7 @@ namespace assignment_one_calculator
             return num = int.Parse(Console.ReadLine() ?? "");
         }
 
-        static void RunDivision(int num1, int num2)
+        public static void RunDivision(int num1, int num2)
         {   
             while(num1 == 0 || num2 == 0)
             {
@@ -71,7 +71,7 @@ namespace assignment_one_calculator
             Console.WriteLine($"The result: {num1} / {num2} = " + (num1 / num2));
         }
 
-        static void RunMultiplication(int num1, int num2)
+        public static void RunMultiplication(int num1, int num2)
         {
             Console.WriteLine($"The result: {num1} * {num2} = " + (num1 * num2));
         }
@@ -84,6 +84,11 @@ namespace assignment_one_calculator
         static void RunSubtraction(int num1, int num2)
         {
             Console.WriteLine($"The result: {num1} - {num2} = " + (num1 - num2));
+        }
+
+        public static int Multiplication(int x, int y)
+        {
+            return x * y;
         }
     }
 }
